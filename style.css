@@ -11,7 +11,6 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 20px;
 }
 h1{
     background: #121FCF;
@@ -21,6 +20,7 @@ h1{
     font-size: 3em;
 }
 h2{
+    margin: 20px 0px;
     font-size: 2em;
 }
 
@@ -50,3 +50,50 @@ section{
     height: 300px;
     margin: 10px auto;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 20px;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    color: #000000;
+}
+    
+    .fa-github {
+     
+      font-size: 24px;
+      transition: transform 0.3s ease-in-out;
+      color: #000000;
+  
+    }
+    
+    .fa-github:hover {
+      transform: rotate(360deg) scale(1.2);
+      color: #000000;
+    }
