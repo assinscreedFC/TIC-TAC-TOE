@@ -12,12 +12,14 @@ class Game{
         this.player1=player1;
         this.player2=player2;
         this.turn=player1;
+        this.occ=0;
         this.brr();
     }
     
 
     game () {
         let won=false;
+        
         const h2=document.querySelector('h2');
         h2.innerHTML=`player ${this.turn}s turn`;
         btn.forEach((b) =>{  
@@ -31,12 +33,19 @@ class Game{
                 console.log(this.winner());
                 won =this.winner();
                 this.Switch();
-                h2.innerHTML=`player ${this.turn}s turn`;
+                if(this.CheckDraw()===false){
+               h2.innerHTML=`player ${this.turn} is turn`;
+                }else{
+                     h2.innerHTML="It's a draw!";
+                }
             }
-            if(won) {
+            
+            if(won && this.occ===0) {
                 this.Switch();
                 h2.innerHTML="Player "+this.turn+" wins!";
+                this.occ++;
             };
+
             })       
         });
     }
@@ -106,6 +115,11 @@ class Game{
         return false;
         
             }
+    CheckDraw (){
+        return grid.filter((e)=> e.innerHTML!=='').length === 9 ;
+         
+    // ? console.log('It\'s a draw') : '';
+    }
     Switch (){
         if(this.turn===this.player1){
             this.turn=this.player2;
@@ -121,8 +135,8 @@ class Game{
                 element.innerHTML = '';
             });
             console.log("Réinitialisation effectuée");
-            this.turn=this.player1;
-           
+            
+            new Game(player1,player2).game();
         });
     
     }
