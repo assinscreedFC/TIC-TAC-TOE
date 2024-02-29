@@ -121,8 +121,10 @@ class Game{
                 element.innerHTML = '';
             });
             console.log("Réinitialisation effectuée");
+            this.turn=this.player1;
            
         });
+    
     }
 
            
