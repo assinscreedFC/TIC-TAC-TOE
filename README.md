@@ -1,3 +1,3 @@
 # TIC-TAC-TOE
 
-LIVE PREVIEW:
+LIVE PREVIEW: https://assinscreedfc.github.io/TIC-TAC-TOE/
