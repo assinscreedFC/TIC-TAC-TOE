@@ -16,17 +16,19 @@ class Game{
     
 
     game () {
+        let won=false;
         const h2=document.querySelector('h2');
         h2.innerHTML=`player ${this.turn}s turn`;
         btn.forEach((b) =>{  
             b.addEventListener('click',(bt)=>{ 
-                console.log(this.winner());
-                if(bt.target.innerHTML==='' &&  this.winner()===false){ 
+                
+                if(bt.target.innerHTML===''&& !(won) ){ 
                 const index =grid.indexOf(bt.target);
                 
                 console.log(grid[0]);
                 grid[index].innerHTML=this.turn;
-                this.winner();
+                console.log(this.winner());
+                won =this.winner();
                 if(this.turn===this.player1){
                     this.turn=this.player2;
                 }else{
@@ -100,6 +102,7 @@ class Game{
             return true;
         }  
         win=0;
+        return false;
         
             }
 
