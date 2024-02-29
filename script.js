@@ -35,9 +35,15 @@ class Game{
                     this.turn=this.player1;
                 }
                 h2.innerHTML=`player ${this.turn}s turn`;
-            }else{
-                h2.innerHTML="Player "+this.turn+" wins!";
             }
+            if(won) {
+                if(this.turn===this.player1){
+                    this.turn=this.player2;
+                }else{
+                    this.turn=this.player1;
+                }
+                h2.innerHTML="Player "+this.turn+" wins!";
+            };
             })       
         });
     }
