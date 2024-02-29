@@ -12,6 +12,7 @@ class Game{
         this.player1=player1;
         this.player2=player2;
         this.turn=player1;
+        this.brr();
     }
     
 
@@ -29,19 +30,11 @@ class Game{
                 grid[index].innerHTML=this.turn;
                 console.log(this.winner());
                 won =this.winner();
-                if(this.turn===this.player1){
-                    this.turn=this.player2;
-                }else{
-                    this.turn=this.player1;
-                }
+                this.Switch();
                 h2.innerHTML=`player ${this.turn}s turn`;
             }
             if(won) {
-                if(this.turn===this.player1){
-                    this.turn=this.player2;
-                }else{
-                    this.turn=this.player1;
-                }
+                this.Switch();
                 h2.innerHTML="Player "+this.turn+" wins!";
             };
             })       
@@ -113,22 +106,31 @@ class Game{
         return false;
         
             }
-
-           
-}
-
-function brr (){
+    Switch (){
+        if(this.turn===this.player1){
+            this.turn=this.player2;
+        }else{
+            this.turn=this.player1;
+        }
+    }
+    
+    brr (){
         _reset.addEventListener('click', () => {
             grid.forEach((element) => {
                 // Réinitialiser le contenu de chaque élément, par exemple, à une chaîne vide
                 element.innerHTML = '';
             });
             console.log("Réinitialisation effectuée");
-            new Game(player1,player2).game();
+           
         });
     }
 
+           
+}
+
+
+
 new Game(player1,player2).game();
-brr();
+
 
 
