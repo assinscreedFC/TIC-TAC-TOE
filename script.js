@@ -35,6 +35,8 @@ class Game{
                     this.turn=this.player1;
                 }
                 h2.innerHTML=`player ${this.turn}s turn`;
+            }else{
+                h2.innerHTML="Player "+this.turn+" wins!";
             }
             })       
         });
