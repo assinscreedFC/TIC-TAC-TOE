@@ -21,7 +21,7 @@ class Game{
         let won=false;
         
         const h2=document.querySelector('h2');
-        h2.innerHTML=`player ${this.turn}s turn`;
+        h2.innerHTML=`player ${this.turn}'s turn`;
         btn.forEach((b) =>{  
             b.addEventListener('click',(bt)=>{ 
                 
@@ -34,7 +34,7 @@ class Game{
                 won =this.winner();
                 this.Switch();
                 if(this.CheckDraw()===false){
-               h2.innerHTML=`player ${this.turn} is turn`;
+               h2.innerHTML=`player ${this.turn}'s turn`;
                 }else{
                      h2.innerHTML="It's a draw!";
                 }
@@ -62,10 +62,10 @@ class Game{
                     if(element.innerHTML===this.turn){
                             win++;
                     }
-                    //console.log(win);
+                   
                 }
                 if(win===3){
-                    console.log("Player "+this.turn+" wins!");
+                    
                     return true;
                 }
             }
@@ -81,7 +81,7 @@ class Game{
                 
             }
             if(win===3){
-                console.log("Player "+this.turn+" wins!");
+               
                 return true;
             }
         }
@@ -95,7 +95,7 @@ class Game{
             
         }
         if(win===3){
-            console.log("Player "+this.turn+" wins!");
+            
             return true;
         }
         win=0;
@@ -108,7 +108,7 @@ class Game{
             
         }
         if(win===3){
-            console.log("Player "+this.turn+" wins!");
+            
             return true;
         }  
         win=0;
@@ -117,9 +117,8 @@ class Game{
             }
     CheckDraw (){
         return grid.filter((e)=> e.innerHTML!=='').length === 9 ;
-         
-    // ? console.log('It\'s a draw') : '';
     }
+    
     Switch (){
         if(this.turn===this.player1){
             this.turn=this.player2;
@@ -131,22 +130,14 @@ class Game{
     brr (){
         _reset.addEventListener('click', () => {
             grid.forEach((element) => {
-                // Réinitialiser le contenu de chaque élément, par exemple, à une chaîne vide
+                // Réinitialiser le contenu de chaque élément à une chaîne vide
                 element.innerHTML = '';
             });
             console.log("Réinitialisation effectuée");
             
             new Game(player1,player2).game();
         });
-    
-    }
-
-           
+    }      
 }
 
-
-
 new Game(player1,player2).game();
-
-
-
