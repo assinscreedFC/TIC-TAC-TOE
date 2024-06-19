@@ -13,7 +13,7 @@ class Game{
         this.player2=player2;
         this.turn=player1;
         this.occ=0;
-        this.brr();
+        
     }
     
 
@@ -127,17 +127,20 @@ class Game{
         }
     }
     
-    brr (){
+    static brr (){
         _reset.addEventListener('click', () => {
             grid.forEach((element) => {
                 // Réinitialiser le contenu de chaque élément à une chaîne vide
                 element.innerHTML = '';
             });
-            console.log("Réinitialisation effectuée");
             
-            new Game(player1,player2).game();
+            console.log("Réinitialisation effectuée");
+            anis =null;
+            anis =new Game(player1,player2).game();
         });
     }      
 }
 
-new Game(player1,player2).game();
+let anis =new Game(player1,player2).game();
+
+Game.brr();
