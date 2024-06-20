@@ -37,6 +37,7 @@ class Game{
                h2.innerHTML=`player ${this.turn}'s turn`;
                 }else{
                      h2.innerHTML="It's a draw!";
+                    this.occ++;
                 }
             }
             
