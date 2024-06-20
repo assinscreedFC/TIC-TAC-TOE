@@ -45,6 +45,7 @@ class Game{
                 this.Switch();
                 h2.innerHTML="Player "+this.turn+" wins!";
                 this.occ++;
+                won=true;
             };
 
             })       
