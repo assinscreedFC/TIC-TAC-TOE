@@ -38,6 +38,7 @@ class Game{
                 }else{
                      h2.innerHTML="It's a draw!";
                     this.occ++;
+                      won=true;
                 }
             }
             
@@ -45,7 +46,7 @@ class Game{
                 this.Switch();
                 h2.innerHTML="Player "+this.turn+" wins!";
                 this.occ++;
-                won=true;
+              
             };
 
             })       
